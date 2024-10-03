@@ -9,24 +9,24 @@ import { QuizServiceService } from 'src/app/service/quiz-service.service';
   styleUrls: ['./end-quiz.component.css']
 })
 export class EndQuizComponent {
-score: number = 0;
- questions: Question[] = [];
-user:any
-  constructor(private quizService:QuizServiceService , private router:Router){}
+  score: number = 0;
+  questions: Question[] = [];
+  user: any
+  constructor(private quizService: QuizServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    window.scroll(0,0)
-      this.score = this.quizService.score;
+    window.scroll(0, 0)
+    this.score = this.quizService.score;
     console.log(this.score);
-    
+
     const participant = localStorage.getItem('participant');
     if (participant) {
       this.user = participant
     }
     this.questions = this.quizService.getQuestions();
   }
-  retryQuiz(){
+  retryQuiz() {
     this.quizService.retryQuiz();
-this.router.navigate(['quiz'])
+    this.router.navigate(['quiz'])
   }
 }

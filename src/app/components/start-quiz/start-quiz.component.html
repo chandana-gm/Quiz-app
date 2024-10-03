@@ -1,29 +1,25 @@
 <div class="header">
-    <div class="quiz-card">
-      <h1>Welcome to Quiz App</h1>
-      <p>The quiz will contain a total of 10 questions.</p>
-      <p> Each question holds 1 point.</p>
-      <div>
-        <h3>Rules</h3>
-        <ul>
-          <li>You have 30 seconds to answer each question</li>
-          <li>After 30 seconds the question was automatically skipped</li>
-          <li>Refreshing the page will reset the quiz</li>
-        </ul>
-        <div class="input-container">
-          <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
-              <input type="text" placeholder="Enter your name" formControlName="name" class="name-field" />
-              
-              <button type="submit">Start</button>
-              <!-- Error message shown only if the form is invalid and has been submitted -->
-              <p *ngIf="nameForm.get('name')?.invalid && formSubmitted" style="color: red;">
-                Please enter your name
-              </p>
-            </form>
-            
-        </div>
+  <div class="quiz-card">
+    <h1>Welcome to Quiz App</h1>
+    <p>The quiz will contain a total of 10 questions.</p>
+    <p> Each question holds 1 point.</p>
+    <div>
+      <h3>Rules</h3>
+      <ul>
+        <li>You have 30 seconds to answer each question</li>
+        <li>After 30 seconds the question was automatically skipped</li>
+        <li>Refreshing the page will reset the quiz</li>
+      </ul>
+      <div class="input-container">
+        <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+          <input type="text" placeholder="Enter your name" formControlName="name" class="name-field" />
+          <button type="submit">Start</button>
+          <!-- Error message part -->
+          <p *ngIf="nameForm.get('name')?.invalid && formSubmitted" style="color: red;">
+            Please enter your name
+          </p>
+        </form>
       </div>
-      
     </div>
   </div>
-  
+</div>

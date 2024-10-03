@@ -8,15 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./start-quiz.component.css']
 })
 export class StartQuizComponent {
-  nameForm: FormGroup;
+  nameForm!: FormGroup;
   formSubmitted = false;
+  constructor(private fb: FormBuilder, private router: Router) { }
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  ngOnInit(){
+    this.initializeForm();
+  }
+  // Initialize the form group
+  initializeForm(){
     this.nameForm = this.fb.group({
       name: ['', Validators.required]
     });
   }
-
+  // form submission
   onSubmit() {
     this.formSubmitted = true;
     if (this.nameForm.valid) {

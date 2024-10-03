@@ -1,4 +1,3 @@
-  
   .header {
     width: 100%;
     min-height: 100vh;
@@ -11,67 +10,66 @@
     position: relative;
     overflow: hidden;
   }
-  
+
   .quiz-card {
-    background: rgba(255, 255, 255, 0.2); /* Softer transparency */
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(30px);
-    padding: 30px 40px; /* Added more padding for a spacious look */
-    border-radius: 20px; /* More rounded corners */
+    padding: 30px 40px;
+    border-radius: 20px;
     text-align: center;
     color: white;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for more depth */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     width: 100%;
   }
-  
+
   .quiz-card h1 {
-    font-size: 2.5rem; /* Adjust font size */
-    margin-bottom: 20px; /* More spacing for headings */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     font-weight: bold;
   }
-  
+
   .quiz-card p {
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
-  
+
   .quiz-card h3 {
     font-size: 2rem;
     margin-top: 20px;
     margin-bottom: 15px;
     font-weight: bold;
   }
-  
+
   .quiz-card ul {
-    text-align: left; /* Centralize the text inside the list */
-    padding-left: 100px; /* Remove default padding */
-    list-style-type: decimal; /* Remove the default bullet points */
+    text-align: left;
+    padding-left: 100px;
+    list-style-type: decimal;
   }
-  
+
   .quiz-card li {
     font-size: 1.1rem;
     margin-bottom: 10px;
   }
-  
-  
+
   .input-container {
-    margin-top: 30px; /* Space between rules and input */
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .input-container input {
-    padding: 12px 20px; /* Adjusted padding for larger input */
+    padding: 12px 20px;
     border-radius: 8px;
     border: none;
     font-size: 1.1rem;
     outline: none;
   }
-  
+
   .input-container button {
     padding: 12px 25px;
-    margin-left: 15px; /* Spacing between input and button */
+    margin-left: 15px;
     border-radius: 8px;
     background-color: #ff0099;
     color: white;
@@ -80,18 +78,20 @@
     font-size: 1.1rem;
     transition: background-color 0.3s;
   }
-  
+
   .input-container button:hover {
     background-color: #ff66b2;
   }
-  
+
+  /* media query */
   @media (max-width:560px) {
     .quiz-card ul {
-        padding-left: 50px;
-    }}
-  @media (max-width:436px) {
-    .name-field{
-        margin-bottom: 10px;
+      padding-left: 50px;
     }
-    
+  }
+
+  @media (max-width:436px) {
+    .name-field {
+      margin-bottom: 10px;
+    }
   }
