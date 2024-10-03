@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="centered-div">
+      <div >
+        <h4>Question {{ currentQuestionIndex + 1 }}/{{ questions.length }}</h4>
+        <h2>{{ questions[currentQuestionIndex].questionText }}</h2>
+  
+        <div class="options">
+          <div *ngFor="let option of questions[currentQuestionIndex].options; let i = index" 
+               [class.selected]="option === selectedAnswer"
+               (click)="selectAnswer(option)">
+            <!-- Custom radio button with letters -->
+            <div class="custom-radio">
+              <span class="radio-letter">{{ getLetter(i) }}</span>
+            </div>&nbsp;
+            <label>{{ option }}</label>
+          </div>
+        </div>
+        
+  
+        <p *ngIf="errorMessage && selectedAnswer === null" class="error-message">{{ errorMessage }}</p> <!-- Display error message only if an answer is not selected -->
+        <p>Time remaining: {{ timer }} seconds</p>
+
+        <button class="next-btn" (click)="moveToNextQuestion()">Skip</button>&nbsp;
+        <button class="next-btn" (click)="nextQuestion()">Next</button>
+  
+      </div>
+    </div>
+  </div>
+  

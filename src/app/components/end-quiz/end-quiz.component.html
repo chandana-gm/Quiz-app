@@ -1,0 +1,15 @@
+<div class="quiz-summary">
+    <div class="quiz-summary-container">
+      <p class="quiz-score-text">{{user | titlecase}} ! You have Scored</p>
+      <h1 class="quiz-score">{{ score }}/{{ questions.length }}</h1>
+      <p class="play-again-text" (click)="retryQuiz()" ><span>Wanna Play Again?</span></p>     
+      <ul class="quiz-questions">
+        <h3>Review your self</h3>
+        <li *ngFor="let question of questions; let i = index">
+         {{i+1}} ) {{ question.questionText }} -
+          <span class="correct-answer"> Answer: {{ question.correctAnswer }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
