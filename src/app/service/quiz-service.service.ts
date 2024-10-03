@@ -6,6 +6,7 @@ import { Question } from '../interface/question.model';
 })
 export class QuizServiceService {
   score: number = 0;
+  // questions
   private questions: Question[] = [
     {
       questionText: 'Which planet is known as the Red Planet?',
@@ -109,12 +110,14 @@ export class QuizServiceService {
     }
   ];
 
-  private shuffledQuestions: Question[] = []; // Store shuffled questions here
+// Store shuffled questions here
+  private shuffledQuestions: Question[] = []; 
 
   constructor() {
     this.shuffleQuestions();
   }
 
+  // for shuffle questions
   private shuffleArray(array: any[]): any[] {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -123,6 +126,7 @@ export class QuizServiceService {
     return array;
   }
 
+  // keep that shuffle questions in summary page
   private shuffleQuestions() {
     this.shuffledQuestions = this.shuffleArray([...this.questions]);
   }
